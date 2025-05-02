@@ -39,7 +39,9 @@ def estimate_brute_force_time(password):
     elif seconds < 3600: return f"{int(seconds//60)} دقيقة"
     elif seconds < 86400: return f"{int(seconds//3600)} ساعة"
     elif seconds < 31536000: return f"{int(seconds//86400)} يوم"
-    else: return f"{int(seconds//31536000)} سنة"
+    else:
+    return f"{min(int(seconds // 31536000), 100)} سنة"
+
 
 def generate_suggestion(length=16):
     chars = string.ascii_letters + string.digits + string.punctuation
