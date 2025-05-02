@@ -24,5 +24,10 @@
 
         {% if results %}
         <div class="result {{ results.color }}">
-            <p>
-           {% endif %}
+            <p>قوة كلمة المرور: {{ results.strength_ar }}</p>
+            <p>الاختراق المتوقع خلال: {{ results.time_to_crack_ar }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
