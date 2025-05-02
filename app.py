@@ -4,7 +4,7 @@ import random
 import secrets
 import os
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=os.path.dirname(os.path.abspath(__file__)))
 
 common_passwords = ["123456", "password", "qwerty", "admin", "user"]
 
