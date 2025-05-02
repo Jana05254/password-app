@@ -72,7 +72,7 @@ def generate_suggested_password(length=16):
     characters = string.ascii_letters + string.digits + string.punctuation
     return ''.join(secrets.choice(characters) for _ in range(length)), ''.join(secrets.choice(characters) for _ in range(length))
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'HEAD'])
 def index():
     results = None
     suggestions = None
