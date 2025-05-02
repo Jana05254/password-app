@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تحليل كلمة المرور</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 تحليل قوة كلمة المرور</h1>
+        <form method="post">
+            <input type="password" name="password" placeholder="أدخل كلمة المرور" required>
+            <button type="submit">تحليل</button>
+        </form>
+
+        {% if results %}
+        <div class="result {{ results.color }}">
+            <p><strong>القوة:</strong> {{ results.strength }}</p>
+            <p><strong>زمن التخمين المتوقع:</strong> {{ results.crack_time }}</p>
+            {% if results.is_common %}
+                <p class="warning">⚠️ هذه كلمة مرور شائعة!</p>
+            {% endif %}
+            {% if results.suggestion %}
+                <p><strong>اقتراح:</strong> {{ results.suggestion }}</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
