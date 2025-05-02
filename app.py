@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, render_template
 import string
 import random
 import secrets
